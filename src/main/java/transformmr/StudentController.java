@@ -37,7 +37,7 @@ public class StudentController {
 	}
 	
 	
-	@RequestMapping("/hehe")
+	@RequestMapping("/mr/get")
 	public void hello3(){
 		String url=tradeProperty.getHosturl()+"/mr/get/14";
 		String param="haha=123&hehe=134";
