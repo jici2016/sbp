@@ -1,10 +1,7 @@
 package transformmr;
 
-import java.net.HttpURLConnection;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api")
 public class StudentController {
 	
 	@Autowired
@@ -38,10 +36,10 @@ public class StudentController {
 	
 	
 	@RequestMapping("/mr/get")
-	public void hello3(){
+	public String hello3(){
 		String url=tradeProperty.getHosturl()+"/mr/get/14";
 		String param="haha=123&hehe=134";
 		String ret = GWTools.sendPost(url, param, 1000);
-		System.out.println(ret);
+		return ret;
 	}
 }
